@@ -1,10 +1,22 @@
 <router-outlet></router-outlet>
 
-<div *ngFor="let message of messageList">
-  <li>
-    {{message}}
-  </li>
+<div>
+  <input [(ngModel)]="newVideoLink" />
+  <button (click)="setVideoLink()">Set video link</button>
 </div>
 
-<input [(ngModel)]="newMessage" (keyup)="$event.keyCode === 13 && sendMessage()" />
-<button (click)="sendMessage()">Send Message</button>
+<!--<div class="chat-container">-->
+<!--  <div *ngFor="let message of messageList">-->
+<!--    <li>-->
+<!--      {{message}}-->
+<!--    </li>-->
+<!--  </div>-->
+
+<!--  <input [(ngModel)]="newMessage" (keyup)="$event.keyCode === 13 && sendMessage()" />-->
+<!--  <button (click)="sendMessage()">Send Message</button>-->
+<!--</div>-->
+<div class="video-container">
+  <video id="videoPlayer" width="50%" controls muted="muted" autoplay >
+    <source src="/video" type="video/mp4" />
+  </video>
+</div>
